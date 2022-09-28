@@ -22,12 +22,10 @@ impl Display for MyError {
 impl Error for MyError {}
 
 fn main() {
-    let n = get_int();
-    match n {
+    let n = match get_int() {
         Ok(n) => n,
         Err(e) => panic!("{}: {}", e, "Could not get n"),
     };
-    let n: usize = n.unwrap();
     println!("{}", n);
 }
 
